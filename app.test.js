@@ -1,5 +1,6 @@
 const request = require("supertest");
-const app = require("./app");
+const { app, server } = require("./src/app");
+
 describe("Book Lending System API", () => {
   let userId;
 
@@ -10,6 +11,10 @@ describe("Book Lending System API", () => {
 
     expect(res.statusCode).toBe(201);
     userId = res.body.userId;
+  });
+
+  afterAll(() => {
+    server.close();
   });
 
   test("User login", async () => {
@@ -50,6 +55,7 @@ describe("Book Lending System API", () => {
       .set("user-id", userId);
 
     expect(res.statusCode).toBe(200);
+    expect(Array.isArray(res.body)).toBe(true);
   });
 
   test("Return a book", async () => {
@@ -63,6 +69,8 @@ describe("Book Lending System API", () => {
 
       expect(res.statusCode).toBe(200);
       expect(res.body.returned).toBe(true);
+    } else {
+      console.warn("No books available for return test.");
     }
   });
 
