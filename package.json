@@ -3,13 +3,14 @@
   "version": "1.0.0",
   "main": "testScript.js",
   "scripts": {
-      "test": "jest"
+    "test": "jest"
   },
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "jest": "^29.7.0"
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
   },
   "dependencies": {
     "node": "^20.19.0"
