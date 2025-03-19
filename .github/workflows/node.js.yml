@@ -13,7 +13,8 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
-   steps:
+    
+    steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
@@ -27,7 +28,3 @@ jobs:
 
       - name: Run a basic Node.js script
         run: node testScript.js
-
-
-    
-      
