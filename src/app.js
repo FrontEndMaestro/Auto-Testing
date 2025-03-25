@@ -184,4 +184,4 @@ const server = app.listen(3000, () => {
   console.log("Book Lending System API running at http://localhost:3000");
 });
 
-module.exports = { app, server };
+module.exports = app;
